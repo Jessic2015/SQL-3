@@ -1,0 +1,52 @@
+CREATE TABLE first_list(
+ num INT,
+	name TEXT,
+	age INT,
+	gender TEXT
+);
+
+CREATE TABLE second_list(
+ num INT,
+	name TEXT,
+	mail  VARCHAR,
+	phone_num VARCHAR
+);
+
+INSERT INTO first_list 
+VALUES(1, 'Yemi Awodele', 52, 'Male'),
+ (2, 'Bimbo Dunsin', 36, 'Female'),
+ (3, 'Chika Festus', 47, 'Male'),
+ (4, 'Ganiu Rasaq', 28, 'Male'),
+ (5, 'Bade Olaitan', 32, 'Female'),
+  (6, 'Abodunde Dare', 45, 'Male'),
+  (7, 'Ayoola Mojoyin', 25, 'Female'),
+  (8, 'Amusan Faramola', 42, 'Female'),
+  (9, 'Arigbigbe Nafisat', 34, 'Female'),
+   (10, 'Micheal Jaus', 29, 'Male');
+   
+INSERT INTO second_list 
+VALUES(1, 'Yemi Awodele', 'Yemiawodele@hmail.com', 08077777733),
+(2, 'Bimbo Dunsin', 'bimbodun@hmail.com', 0809797969),
+(3, 'Chika Festus', 'chikaf@hmail.com', 0812222222),
+(4, 'Ganiu Rasaq', 'ganiuraaq@hmail.com', 0908787856),
+(5, 'Bade Olaitan', 'badeola@hmail.com', 07056574743),
+(6, 'Abodunde Dare', 'abodubfy@hmail.com', 0906334333),
+(7, 'Ayoola Mojoyin', 'mojoyinbaby@hmail.com', 0704567321),
+(8, 'Amusan Faramola', 'amusan12@hmil.com', 09176328913),
+(9, 'Arigbigbe Nafisat', 'nafisatarib@hmail.com', 08123334343),
+(10, 'Micheal Jaus', 'michealjaus@hmail.com', 09087654321);
+
+ELECT * FROM first_list
+SELECT num,age FROM first_list
+SELECT MIN(age) AS "min_age" FROM first_list WHERE num BETWEEN 1 AND 10;
+SELECT age AS "ascending_order" FROM first_list WHERE num BETWEEN 1 AND 10 ORDER BY age ASC;
+SELECT MAX(age) AS "max_age" FROM first_list WHERE num BETWEEN 1 AND 10;
+SELECT age AS "desc_order" FROM first_list WHERE num BETWEEN 1 AND 10 ORDER BY age DESC;
+SELECT * FROM first_list WHERE age NOT BETWEEN 25 AND 40; 
+SELECT * FROM first_list WHERE age >= 20 AND age<= 50;
+SELECT DISTINCT name  FROM first_list WHERE 'gender' LIKE 'B\%';
+SELECT *
+FROM first_list
+WHERE gender LIKE 'F%'
+ORDER BY gender;
+SELECT * FROM first_list WHERE name LIKE 'B%' ORDER BY name;

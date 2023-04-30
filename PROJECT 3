@@ -1,0 +1,30 @@
+CREATE TABLE bet_id(
+	id INT,
+	room_type VARCHAR,
+	room_id VARCHAR,
+	price VARCHAR,
+	book_date DATE,
+	book_time VARCHAR,
+	member_id VARCHAR,
+	date_time DATE,
+	min_book VARCHAR,
+	pay_status TEXT
+);
+
+
+COPY bet_id FROM 'C:\ProgramData\Microsoft\Windows\Start Menu\Programs\PostgreSQL 14\Documentation\files\challenge3.csv' DELIMITER ',' csv header;
+
+SELECT * FROM bet_id
+
+SELECT room_type,member_id, price FROM bet_id
+SELECT book_time FROM bet_id
+SELECT date_time, price FROM bet_id
+SELECT price FROM bet_id
+SELECT date_time FROM bet_id
+SELECT DISTINCT room_type, member_id, price FROM bet_id
+SELECT MIN(price) AS "min_price" FROM bet_id WHERE date_time BETWEEN '2017-12-01' AND '2018-12-31';
+SELECT price AS "ascending_order" FROM bet_id WHERE date_time BETWEEN '2017-12-01' AND '2017-12-31' ORDER BY price ASC;
+SELECT MAX(price) AS "Max_price" FROM bet_id WHERE date_time BETWEEN '2017-12-01' AND '2018-12-31';
+SELECT price AS "descending_order" FROM bet_id WHERE date_time BETWEEN '20117-12-01 AND '2018-12-31' ORDER BY price DESC;
+
+SELECT * FROM bet_id WHERE room_type LIKE 'Badminton%' ORDER BY room_type;
